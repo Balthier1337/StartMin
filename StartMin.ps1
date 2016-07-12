@@ -13,13 +13,9 @@ param(
 [string]$program
 )
 
-#$windowsVersion = gwmi win32_operatingSystem | select caption
-#$outlookVersion = gwmi win32_product -filter "name like '%$program%'"
-
 $psVersion = Get-Host | select version
 
 function startProgram() {
-	#Start-Sleep -s 10
 	cmd.exe /c start /b /min $program
 }
 
